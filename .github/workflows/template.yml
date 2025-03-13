@@ -17,4 +17,5 @@ jobs:
         uses: actions/checkout@v2
       - name: APIM Files
         run: echo "${{ inputs.configPath }}/$PROFILE_FILE_NAME"
+      - name: Policies File
         run: echo "${{ inputs.configPath }}/$POLICIES_FILE_NAME"
