@@ -11,12 +11,9 @@ env:
 jobs:
   profile:
     name: Applying Profile
-    runs-on: ubuntu-latest
-    continue-on-error: true
+    runs-on: ubuntu-latest    
     environment: ${{ github.ref == 'refs/heads/main' && 'production' || github.ref == 'refs/heads/development' && 'development' }}
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
       - name: Profile File
         run: echo "${{ inputs.configPath }}/$PROFILE_FILE_NAME"
       # add more steps here
@@ -24,11 +21,7 @@ jobs:
     needs: profile
     name: Applying Policies
     runs-on: ubuntu-latest
-    continue-on-error: true
-    environment: ${{ github.ref == 'refs/heads/main' && 'production' || github.ref == 'refs/heads/development' && 'development' }}
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
       - name: Profile File
         run: echo "${{ inputs.configPath }}/$PROFILE_FILE_NAME"
       # add more steps here
