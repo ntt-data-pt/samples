@@ -2,7 +2,6 @@ name: Workflow Template Usage
 on: workflow_dispatch
 jobs:
   template-usage:
-    runs-on: ubuntu-latest
     uses: ntt-data-pt/samples/.github/workflows/template.yml@main
     with:
       sampleTextInput: 'Hello, World!'
