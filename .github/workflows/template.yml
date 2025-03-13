@@ -12,7 +12,7 @@ jobs:
   template:
     name: APIM Configuration Workflow
     runs-on: ubuntu-latest
-    environment: ${{ github.ref == 'refs/heads/main' && 'production' || github.ref == 'refs/heads/recovery' && 'recovery' || 'development' }}
+    environment: ${{ github.ref == 'refs/heads/main' && 'production' || github.ref == 'refs/heads/development' && 'development' }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
