@@ -4,8 +4,6 @@ jobs:
   template-usage:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
       - name: Use Workflow Template
         uses: ./.github/workflows/template.yml
         with:
