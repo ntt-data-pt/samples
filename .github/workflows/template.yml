@@ -12,6 +12,7 @@ jobs:
   profile:
     name: Applying Profile
     runs-on: ubuntu-latest
+    continue-on-error: true
     environment: ${{ github.ref == 'refs/heads/main' && 'production' || github.ref == 'refs/heads/development' && 'development' }}
     steps:
       - name: Checkout repository
@@ -23,6 +24,7 @@ jobs:
     needs: profile
     name: Applying Policies
     runs-on: ubuntu-latest
+    continue-on-error: true
     environment: ${{ github.ref == 'refs/heads/main' && 'production' || github.ref == 'refs/heads/development' && 'development' }}
     steps:
       - name: Checkout repository
