@@ -1,4 +1,4 @@
-name: Workflow Template Usage
+name: APIM Profile 1 Configuration
 on: 
   workflow_dispatch:
   push:
