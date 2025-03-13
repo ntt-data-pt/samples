@@ -9,8 +9,8 @@ env:
   PROFILE_FILE_NAME: profile.json
   POLICIES_FILE_NAME: policies.xml
 jobs:
-  template:
-    name: APIM Configuration Workflow
+  profile:
+    name: Applying Profile
     runs-on: ubuntu-latest
     environment: ${{ github.ref == 'refs/heads/main' && 'production' || github.ref == 'refs/heads/development' && 'development' }}
     steps:
@@ -18,5 +18,15 @@ jobs:
         uses: actions/checkout@v2
       - name: Profile File
         run: echo "${{ inputs.configPath }}/$PROFILE_FILE_NAME"
-      - name: Policies File
-        run: echo "${{ inputs.configPath }}/$POLICIES_FILE_NAME"
+      # add more steps here
+  policies:
+    needs: profile
+    name: Applying Policies
+    runs-on: ubuntu-latest
+    environment: ${{ github.ref == 'refs/heads/main' && 'production' || github.ref == 'refs/heads/development' && 'development' }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Profile File
+        run: echo "${{ inputs.configPath }}/$PROFILE_FILE_NAME"
+      # add more steps here
