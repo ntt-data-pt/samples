@@ -3,8 +3,7 @@ on: workflow_dispatch
 jobs:
   template-usage:
     runs-on: ubuntu-latest
-    steps:
-      - name: Use Workflow Template
-        uses: ntt-data-pt/samples/.github/workflows/template.yml@main
-        with:
-          sampleTextInput: 'Hello, World!'
+    uses: ntt-data-pt/samples/.github/workflows/template.yml@main
+    with:
+      sampleTextInput: 'Hello, World!'
+        
