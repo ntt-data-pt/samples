@@ -2,14 +2,18 @@ name: Workflow Template
 on:
   workflow_call:
     inputs:
-      sampleTextInput:
+      configPath:
         required: true
         type: string
+env:
+  PROFILE_FILE_NAME: profile.json
+  POLICIES_FILE_NAME: policies.xml
 jobs:
   template:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-      - name: Echo Sample Text Input
-        run: echo "${{ inputs.sampleTextInput }}"
+      - name: APIM Files
+        run: echo "${{ inputs.configPath }}/$PROFILE_FILE_NAME"
+        run: echo "${{ inputs.configPath }}/$POLICIES_FILE_NAME"

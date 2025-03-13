@@ -1,0 +1,12 @@
+name: Workflow Template Usage
+on: 
+  workflow_dispatch:
+  push:
+    paths:
+      - 'apim/profile-2'
+jobs:
+  profile:
+    name: Profile 2 Config
+    uses: ntt-data-pt/samples/.github/workflows/template.yml@main
+    with:
+      configPath: 'apim/profile-2' 

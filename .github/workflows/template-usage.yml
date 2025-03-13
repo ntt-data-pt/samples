@@ -1,8 +1,0 @@
-name: Workflow Template Usage
-on: workflow_dispatch
-jobs:
-  template-usage:
-    uses: ntt-data-pt/samples/.github/workflows/template.yml@main
-    with:
-      sampleTextInput: 'Sample text passed to template...'
-        
