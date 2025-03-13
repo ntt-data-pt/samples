@@ -4,5 +4,5 @@ jobs:
   template-usage:
     uses: ntt-data-pt/samples/.github/workflows/template.yml@main
     with:
-      sampleTextInput: 'Hello, World!'
+      sampleTextInput: 'Sample text passed to template...'
         
