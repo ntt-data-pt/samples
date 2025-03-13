@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
   push:
     paths:
-      - 'apim/profile-2'
+      - 'apim/profile-2/**'
 jobs:
   profile:
     name: Profile 2 Config
