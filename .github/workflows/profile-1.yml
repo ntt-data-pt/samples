@@ -3,10 +3,10 @@ on:
   workflow_dispatch:
   push:
     paths:
-      - '/apim/profile-2'
+      - 'apim/profile-1/**'
 jobs:
   profile:
-    name: Profile 2 Config
+    name: Profile 1 Config
     uses: ntt-data-pt/samples/.github/workflows/template.yml@main
     with:
-      configPath: 'apim/profile-2' 
+      configPath: 'apim/profile-1' 
