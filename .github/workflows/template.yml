@@ -23,6 +23,7 @@ jobs:
     needs: profile
     name: Applying Policies
     runs-on: ubuntu-latest
+    environment: ${{ github.ref == 'refs/heads/main' && 'production' || github.ref == 'refs/heads/development' && 'development' }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
