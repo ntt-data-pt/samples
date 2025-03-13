@@ -10,6 +10,7 @@ env:
   POLICIES_FILE_NAME: policies.xml
 jobs:
   template:
+    name: APIM Configuration Workflow
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
