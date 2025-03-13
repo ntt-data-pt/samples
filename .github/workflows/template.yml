@@ -15,7 +15,7 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-      - name: APIM Files
+      - name: Profile File
         run: echo "${{ inputs.configPath }}/$PROFILE_FILE_NAME"
       - name: Policies File
         run: echo "${{ inputs.configPath }}/$POLICIES_FILE_NAME"
